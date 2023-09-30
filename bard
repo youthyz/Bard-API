@@ -3,12 +3,12 @@ import requests
 def get_api_id():
   """获取 API ID。"""
   response = requests.get("https://api.bard.ai/v1/api_id")
-  return json.loads(response.text)["api_id"]
+  return json.loads(response.content.decode())["api_id"]
 
 def get_api_key():
   """获取 API 密钥。"""
   response = requests.get("https://api.bard.ai/v1/api_key")
-  return json.loads(response.text)["api_key"]
+  return json.loads(response.content.decode())["api_key"]
 
 def main():
   """主函数。"""
