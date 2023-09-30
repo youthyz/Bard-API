@@ -1,0 +1,21 @@
+import requests
+
+def get_api_id():
+  """获取 API ID。"""
+  response = requests.get("https://api.bard.ai/v1/api_id")
+  return response.json()["api_id"]
+
+def get_api_key():
+  """获取 API 密钥。"""
+  response = requests.get("https://api.bard.ai/v1/api_key")
+  return response.json()["api_key"]
+
+def main():
+  """主函数。"""
+  api_id = get_api_id()
+  api_key = get_api_key()
+  print(f"API ID：{api_id}")
+  print(f"API 密钥：{api_key}")
+
+if __name__ == "__main__":
+  main()
